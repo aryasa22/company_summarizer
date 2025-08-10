@@ -1,0 +1,4 @@
+google-auth==2.40.3
+gspread==6.2.1
+openai==1.99.6
+pandas==2.3.1
