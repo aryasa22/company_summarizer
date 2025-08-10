@@ -147,7 +147,7 @@ def summarize_data() -> bool:
     company_name_data = read_sheet(sheet_id, "Companies")    
     
     # Process each company name
-    for name in company_name_data['company_name'].tolist():
+    for name in company_name_data['company_name']:
         
         # Fetch already summarized companies
         summarized_companies = read_sheet(sheet_id, "Summaries")
@@ -158,7 +158,7 @@ def summarize_data() -> bool:
             summarized_companies['summary'] = []
         
         # Skip if company already has a summary
-        if name in summarized_companies['company_name']:
+        if name in summarized_companies['company_name'].tolist():
             continue
         
         # Get summarization using OpenAI + web search
