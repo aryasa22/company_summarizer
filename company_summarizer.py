@@ -147,7 +147,7 @@ def summarize_data() -> bool:
     company_name_data = read_sheet(sheet_id, "Companies")    
     
     # Process each company name
-    for name in company_name_data['company_name']:
+    for name in company_name_data['company_name'].tolist():
         
         # Fetch already summarized companies
         summarized_companies = read_sheet(sheet_id, "Summaries")
